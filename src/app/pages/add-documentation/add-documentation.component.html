@@ -1,0 +1,33 @@
+<div class="container">
+  <p class="tag">PLATAFORMA</p>
+  <select name="selector" #selector [(ngModel)]="endPoint" (ngModelChange)="print($event)" class="box">
+    <option value="html" selected>HTML</option>
+    <option value="css">CSS</option>
+    <option value="js">JavaScript</option>
+  </select>
+  <form [formGroup]="addForm" (ngSubmit)="addFormulary()" class="formulary">
+    <p  class="tag">ETIQUETA</p><select name="tag" #tag formControlName="tag" class="box">
+      <option value="Documentación" selected>Documentación</option>
+      <option value="Videotutorial">Tutorial de Vídeo</option>
+      <option value="Tutorial">Tutorial de Texto</option>
+      <option value="Recursos">Recursos</option>
+      <option value="Librería">Librería</option>
+    </select>
+    <div *ngIf="tag.value !== 'Videotutorial'"  class="tag-container">
+      <p  class="tag">IMAGEN</p><input type="text" formControlName="img"/>
+    </div>
+    <p  class="tag">TÍTULO</p><input type="text" formControlName="title"/>
+    <p  class="tag">AUTOR</p><input type="text" formControlName="author"/>
+    <p  class="tag">DESCRIPCIÓN</p><input type="text" formControlName="description"/>
+    <div *ngIf="tag.value === 'Videotutorial'" class="tag-container">
+      <p  class="tag">VIDEO</p><input type="text" formControlName="video"/>
+    </div>
+    <div *ngIf="tag.value !== 'Videotutorial'"  class="tag-container">
+      <p  class="tag">URL</p><input type="text" formControlName="url"/>
+    </div>
+    <button data-text="Awesome" class="button">
+      <span class="actual-text">&nbsp;CREAR&nbsp;</span>
+      <span class="hover-text" aria-hidden="true">&nbsp;CREAR&nbsp;</span>
+    </button>
+  </form>
+</div>

@@ -1,0 +1,58 @@
+* {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar{
+  width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #95C11E;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+
+    &-link {
+    display: flex;
+    height: 80px;
+    font-weight: 400;
+    color: whitesmoke;
+    gap: 20px;
+    margin-right: 26px;
+    }
+
+    a {
+      height: 80px;
+      line-height: 80px;
+      transition: all 0.5s;
+
+      &:hover {
+        font-size: 105%;
+        transition: all 0.5s;
+        box-shadow: inset 0px -8px 0px 0px #95C11E
+      }
+    }
+
+    &-logo{
+      width: 170px;
+      margin-left: 20px;
+      transition: all 0.5s;
+
+      &:hover {
+        cursor: pointer;
+        transition: all 0.5s;
+        scale: 1.1;
+      }
+
+    }
+
+
+
+
+
+}

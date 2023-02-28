@@ -1,0 +1,113 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+// SCROLLBAR
+::-webkit-scrollbar {width: 0px;}
+::-webkit-scrollbar-track {background: #f1f1f100;}
+::-webkit-scrollbar-thumb {background: rgba(136, 136, 136, 0);}
+::-webkit-scrollbar-thumb:hover {background: #95C11E;}
+
+.aboutBlock {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(90, 90, 90);
+  margin-bottom: 40px;
+}
+
+
+.aboutContainer {
+  padding-top: 130px;
+  max-width: 930px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: rgba(209, 209, 209, 0);
+  border-style: solid;
+  padding-bottom: 80px;
+  background-color: rgb(114, 114, 114);
+  gap: 20px;
+
+  &-title {
+    margin-bottom: 30px;
+    font-size: 50px;
+    letter-spacing: 10px;
+  }
+
+  &-card2 {
+    width: 95%;
+    display: flex;
+    text-align: right;
+  }
+
+  &-card {
+    width: 95%;
+    display: flex;
+    text-align: left;
+
+    &_image {
+      width: 30%;
+
+      img {
+        width: 200px;
+        overflow-y: scroll;
+        border-color: #95C11E;
+        border-style: solid;
+        border-radius: 10px;
+      }
+
+      &__icons2{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        a img{
+          width: 40px;
+          text-align: center;
+          transition: all 0.3s;
+          &:hover {
+            transition: all 0.3s;
+            filter: invert(72%) sepia(54%) saturate(2103%) hue-rotate(30deg) brightness(101%) contrast(76%);
+          }
+      }
+      }
+
+      &__icons{
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+
+        a img{
+            width: 40px;
+            text-align: center;
+            transition: all 0.3s;
+            &:hover {
+              transition: all 0.3s;
+              filter: invert(72%) sepia(54%) saturate(2103%) hue-rotate(30deg) brightness(101%) contrast(76%);
+            }
+        }
+      }
+    }
+
+    &_description {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px 10px 10px 10px;
+      height: 200px;
+      overflow-y: scroll;
+      border-color: #95C11E;
+      border-style: solid;
+
+      &__icons{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<div class="container" *ngIf="html && css && js">
+    <div class="container-button">
+        <button class="button" type="button" (click)="switchHtml()">
+            <span class="actual-text">&nbsp;HTML&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;HTML&nbsp;</span>
+        </button>
+        <button class="button" type="button" (click)="switchCss()">
+            <span class="actual-text">&nbsp;CSS&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;CSS&nbsp;</span>
+        </button>
+        <button class="button" type="button" (click)="switchJs()">
+            <span class="actual-text">&nbsp;JavaScript&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;JavaScript&nbsp;</span>
+        </button>
+        <button class="button" type="button" (click)="switchDelete()">
+            <span class="actual-text">&nbsp;Borrar&nbsp;elementos&nbsp;</span>
+            <span class="hover-text" aria-hidden="true">&nbsp;Borrar&nbsp;elementos&nbsp;</span>
+        </button>
+    </div>
+
+    <ng-template [ngIf]="showHtml">
+        <div class="container-cards">
+            <div class="card" *ngFor="let info of html" id={{info.id}}>
+                <div class="card-details">
+                    <div class="card-video" *ngIf="info.video"><iframe 
+                        [src]="getVideoIframe(info.video)"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        *ngIf="info.video"></iframe></div>
+                    <img class="card-img" src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+                    <h3 class="card-title">{{ info.title }}</h3>
+                    <div class="card-authortag"> 
+                        <span class="card-author">{{ info.author }}</span>
+                        <p class="card-tag">{{ info.tag }}</p>
+                    </div>
+                </div>
+                <span class="card-description">{{ info.description }}</span>
+                <a class="card-url" href="{{ info.url }}" target="_blank" *ngIf="info.url">+</a>
+                <button class="card-button" type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">+</button>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="showCss">
+        <div class="container-cards">
+            <div class="card" *ngFor="let info of css" id={{info.id}}>
+                <div class="card-details">
+                    <div class="card-video" *ngIf="info.video"><iframe 
+                        [src]="getVideoIframe(info.video)"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        *ngIf="info.video"></iframe></div>
+                    <img class="card-img" src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+                    <h3 class="card-title">{{ info.title }}</h3>
+                    <div class="card-authortag"> 
+                        <span class="card-author">{{ info.author }}</span>
+                        <p class="card-tag">{{ info.tag }}</p>
+                    </div>
+                </div>
+                <span class="card-description">{{ info.description }}</span>
+                <a class="card-url" href="{{ info.url }}" target="_blank" *ngIf="info.url">+</a>
+                <button class="card-button" type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">+</button>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="showJs">
+        <div class="container-cards">
+            <div class="card" *ngFor="let info of js" id={{info.id}}>
+                <div class="card-details">
+                    <div class="card-video" *ngIf="info.video"><iframe 
+                        [src]="getVideoIframe(info.video)"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        *ngIf="info.video"></iframe></div>
+                    <img class="card-img" src="{{ info.img }}" alt="{{ info.title }}" *ngIf="info.img" />
+                    <h3 class="card-title">{{ info.title }}</h3>
+                    <div class="card-authortag"> 
+                        <span class="card-author">{{ info.author }}</span>
+                        <p class="card-tag">{{ info.tag }}</p>
+                    </div>
+                </div>
+                <span class="card-description">{{ info.description }}</span>
+                <a class="card-url" href="{{ info.url }}" target="_blank" *ngIf="info.url">+</a>
+                <button class="card-button" type="button" (click)="deleteArticle(info.id)" *ngIf="showDelete">+</button>
+            </div>
+        </div>
+    </ng-template>
+
+
+</div>
